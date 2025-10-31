@@ -10,10 +10,10 @@ function notFoundError(entity: string): AppError {
     }
 }
 
-function badRequestError(message = "Requisição inválida!"): AppError {
+function badRequestError(entity: string): AppError {
     return {
         name: "BadRequest",
-        message
+        message: `Bad request: ${entity}`
     }
 }
 
