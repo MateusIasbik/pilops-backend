@@ -6,7 +6,7 @@ type AppError = {
 function notFoundError(entity: string): AppError {
     return {
         name: "NotFound",
-        message: `${entity} não encontrado!`
+        message: `${entity} not found!`
     }
 }
 
