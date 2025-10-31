@@ -1,8 +1,20 @@
-function notFoundError(entity: string) {
+type AppError = {
+  name: string;
+  message: string;
+};
+
+function notFoundError(entity: string): AppError {
     return {
         name: "NotFound",
         message: `${entity} não encontrado!`
     }
 }
 
-export { notFoundError };
+function badRequestError(message = "Requisição inválida!"): AppError {
+    return {
+        name: "BadRequest",
+        message
+    }
+}
+
+export { notFoundError, AppError };
