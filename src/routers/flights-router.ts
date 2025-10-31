@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { flightsController } from '../controllers/flights-controller.js';
+import { flightsController } from '../controllers/flights-controller';
 
 const flightsRouter = Router();
 

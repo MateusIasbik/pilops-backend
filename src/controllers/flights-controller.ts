@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { flightsService } from "../services/flights-service.js";
+import { flightsService } from "../services/flights-service";
 import httpStatus from "http-status";
 
 async function getAllFlights(req: Request, res: Response) {

@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
-import flightsRouter from "./routers/flights-router.js";
-import errorHandlingMiddleware from "./middlewares/errors-middleware.js";
+import flightsRouter from "./routers/flights-router";
+import errorHandlingMiddleware from "./middlewares/errors-middleware";
 
 const app = express();
 app.use(express.json());
