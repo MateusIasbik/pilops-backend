@@ -1,9 +1,9 @@
-import Joi from 'joi';
+import Joi from "joi";
 
 const aircraftSchema = Joi.object({
-    name: Joi.string().required(),
-    registration: Joi.string().required(),
-    airline: Joi.string().required(),
+  name: Joi.string().required(),
+  registration: Joi.string().required(),
+  airline: Joi.string().required(),
 });
 
 const routeSchema = Joi.object({
