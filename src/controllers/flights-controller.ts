@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { flightsService } from "../services/flights-service";
 import httpStatus from "http-status";
+import { badRequestError } from "../errors/error";
 
 async function getAllFlights(req: Request, res: Response) {
     const flights = flightsService.getAllFlights();
@@ -17,8 +18,7 @@ async function getTotalBalanceByAircraft(req: Request, res: Response) {
     const { field, value } = req.query;
 
     if (!field || !value || typeof field !== "string" || typeof value !== "string") {
-        return res.status(httpStatus.BAD_REQUEST)
-            .send({ message: "Query parameters 'field' and 'value' are required" });
+        throw badRequestError("Query parameters 'field' and 'value'");
     }
 
     const totalBalance = flightsService.getTotalBalanceByAircraft(
