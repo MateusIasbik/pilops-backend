@@ -29,4 +29,10 @@ const flightsResponseSchema = Joi.object({
   flights: Joi.array().items(flightSchema).required(),
 });
 
-export { flightsResponseSchema, flightSchema, flightDataSchema, routeSchema, aircraftSchema };
+export {
+  flightsResponseSchema,
+  flightSchema,
+  flightDataSchema,
+  routeSchema,
+  aircraftSchema,
+};
