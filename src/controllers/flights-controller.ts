@@ -1,17 +1,16 @@
 import { Request, Response } from "express";
 import { flightsService } from "../services/flights-service";
-import httpStatus from "http-status";
 import { badRequestError } from "../errors/error";
 
 async function getAllFlights(req: Request, res: Response) {
     const flights = flightsService.getAllFlights();
-    res.status(httpStatus.OK).send(flights);
+    res.status(200).send(flights);
 }
 
 async function getFlightById(req: Request, res: Response) {
     const { id } = req.params;
     const flight = flightsService.getFlightById(id);
-    res.status(httpStatus.OK).send(flight);
+    res.status(200).send(flight);
 }
 
 async function getTotalBalanceByAircraft(req: Request, res: Response) {
@@ -26,7 +25,7 @@ async function getTotalBalanceByAircraft(req: Request, res: Response) {
         value
     );
 
-    res.status(httpStatus.OK).send({ totalBalance });
+    res.status(200).send({ totalBalance });
 }
 
 export const flightsController = {

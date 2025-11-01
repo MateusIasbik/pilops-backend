@@ -1,5 +1,4 @@
 // import { NextFunction, Request, Response } from "express";
-// import httpStatus from "http-status";
 // import Joi, { ObjectSchema, ValidationErrorItem } from "joi";
 
 // export function validateSchema(schema: ObjectSchema) {
@@ -7,7 +6,7 @@
 //     const validation = schema.validate(req.body, { abortEarly: false });
 //     if (validation.error) {
 //       return res
-//         .status(httpStatus.UNPROCESSABLE_ENTITY)
+//         .status(422)
 //         .send(validation.error.details.map((detail: ValidationErrorItem) => detail.message));
 //     }
 //     next();

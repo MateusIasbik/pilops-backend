@@ -1,13 +1,12 @@
 import { Request, Response, NextFunction } from "express";
-import httpStatus from "http-status";
 import { AppError } from "../errors/error.js";
 
 const errorStatusMap: { [key: string]: number } = {
-  NotFound: httpStatus.NOT_FOUND,
-  Conflict: httpStatus.CONFLICT,
-  BadRequest: httpStatus.BAD_REQUEST,
-  UnprocessableEntity: httpStatus.UNPROCESSABLE_ENTITY,
-  Forbidden: httpStatus.FORBIDDEN,
+  NotFound: 404,
+  Conflict: 409,
+  BadRequest: 400,
+  UnprocessableEntity: 422,
+  Forbidden: 403,
 };
 
 export default function errorHandlingMiddleware(
@@ -19,7 +18,7 @@ export default function errorHandlingMiddleware(
   console.log(error);
 
   const { name, message } = error;
-  const status = errorStatusMap[name] || httpStatus.INTERNAL_SERVER_ERROR;
+  const status = errorStatusMap[name] || 500;
 
   return res.status(status).send(message);
 }
