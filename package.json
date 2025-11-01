@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.5",
+    "@types/http-status": "^0.2.30",
     "@types/joi": "^17.2.2",
     "@types/node": "^24.9.2",
     "nodemon": "^3.1.10",
