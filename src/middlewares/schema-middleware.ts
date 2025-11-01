@@ -8,7 +8,7 @@ export function validateSchema(schema: Joi.ObjectSchema) {
     if (validation.error) {
       return res
         .status(httpStatus.UNPROCESSABLE_ENTITY)
-        .send(validation.error.details.map((detail) => detail.message));
+        .send(validation.error.details.map((detail: Joi.ValidationErrorItem) => detail.message));
     }
     next();
   };
