@@ -1,10 +1,7 @@
 {
   "name": "pilops-backend",
   "version": "1.0.0",
-  "engines": {
-    "node": "20.x"
-  },
-  "main": "dist/server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.ts",
@@ -17,7 +14,8 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0",
-    "joi": "^17.13.3"
+    "http-status": "^2.1.0",
+    "joi": "^18.0.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.5",

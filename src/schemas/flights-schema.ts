@@ -1,38 +1,32 @@
-// import Joi from "joi";
+import joi from 'joi';
 
-// const aircraftSchema = Joi.object({
-//   name: Joi.string().required(),
-//   registration: Joi.string().required(),
-//   airline: Joi.string().required(),
-// });
+const aircraftSchema = joi.object({
+    name: joi.string().required(),
+    registration: joi.string().required(),
+    airline: joi.string().required(),
+});
 
-// const routeSchema = Joi.object({
-//   from: Joi.string().required(),
-//   to: Joi.string().required(),
-// });
+const routeSchema = joi.object({
+  from: joi.string().required(),
+  to: joi.string().required(),
+});
 
-// const flightDataSchema = Joi.object({
-//   date: Joi.date().iso().required(),
-//   balance: Joi.number().required(),
-//   route: routeSchema.required(),
-//   xp: Joi.number().required(),
-//   missionBonus: Joi.number().required(),
-// });
+const flightDataSchema = joi.object({
+  date: joi.date().iso().required(),
+  balance: joi.number().required(),
+  route: routeSchema.required(),
+  xp: joi.number().required(),
+  missionBonus: joi.number().required(),
+});
 
-// const flightSchema = Joi.object({
-//   id: Joi.string().required(),
-//   aircraft: aircraftSchema.required(),
-//   flightData: flightDataSchema.required(),
-// });
+const flightSchema = joi.object({
+  id: joi.string().required(),
+  aircraft: aircraftSchema.required(),
+  flightData: flightDataSchema.required(),
+});
 
-// const flightsResponseSchema = Joi.object({
-//   flights: Joi.array().items(flightSchema).required(),
-// });
+const flightsResponseSchema = joi.object({
+  flights: joi.array().items(flightSchema).required(),
+});
 
-// export {
-//   flightsResponseSchema,
-//   flightSchema,
-//   flightDataSchema,
-//   routeSchema,
-//   aircraftSchema,
-// };
+export { flightsResponseSchema, flightSchema, flightDataSchema, routeSchema, aircraftSchema };

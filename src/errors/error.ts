@@ -17,4 +17,4 @@ function badRequestError(entity: string): AppError {
     }
 }
 
-export { notFoundError, badRequestError, AppError };
+export { notFoundError, AppError };
