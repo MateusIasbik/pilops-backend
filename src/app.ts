@@ -1,8 +1,12 @@
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 import flightsRouter from "./routers/flights-router";
 import errorHandlingMiddleware from "./middlewares/errors-middleware";
 
 const app = express();
+
+app.use(cors());
+
 app.use(express.json());
 
 app.get('/health', (req: Request, res: Response) => {
